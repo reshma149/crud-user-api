@@ -29,12 +29,12 @@ app.all(`*` , async (req, res) => {
 })
 
 app.listen(PORT,() => {
-    if(process.env.MOD === "development")
+    if(process.env.MODE === "development")
     {
         connectDb(process.env.MONGO_DEV)
     }
 
-    if(process.env.MOD === "production")
+    if(process.env.MODE === "production")
         {
             connectDb(process.env.MONGO_PROD)
         }
